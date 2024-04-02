@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from 'react'
+import AddEmployeeForm from './AddEmployeeForm';
 import EmpDetails from './EmpDetails'
 
 const data = [
@@ -137,6 +138,10 @@ const Data = () => {
 
     const [currData, setCurrData] = useState([]);
 
+    const addEmployee = (newEmployee) => {
+        setCurrData([...currData, newEmployee]);
+    };
+
     useEffect(()=>{
         getData().then((res)=>{
             console.log(res);
@@ -147,6 +152,7 @@ const Data = () => {
 
     return (
         <div>
+            <AddEmployeeForm addEmployee={addEmployee}/>
             <EmpDetails data={currData} />
         </div>
     )

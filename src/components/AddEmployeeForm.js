@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './AddEmployeeForm.css'
 
-const AddEmployeeForm = () => {
+const AddEmployeeForm = ({addEmployee}) => {
     const [inputValues, setInputValues] = useState({
         empID: '',
         userName: '',
@@ -21,12 +21,14 @@ const AddEmployeeForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormData([...formData, inputValues]);
+        addEmployee(inputValues);
         setInputValues({
             empID: '',
             userName: '',
             location: '',
             division: ''
         });
+      
         console.log(inputValues)
         console.log(formData)
         setShowModal(false);

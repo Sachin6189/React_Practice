@@ -44,7 +44,7 @@ const EmpDetails = ({ data }) => {
     return (
         
         <div className="container">
-            <AddEmployeeForm />
+       
             <hr /><hr />
             <label className="LocLab">Select a Location:</label>
             <select name="Location" id="Location" className="Location" value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>

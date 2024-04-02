@@ -140,6 +140,7 @@ const Data = () => {
 
     const addEmployee = (newEmployee) => {
         setCurrData([...currData, newEmployee]);
+        // setCurrData((oldState)=>([...oldState, newEmployee])) 
     };
 
     useEffect(()=>{
